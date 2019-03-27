@@ -9,3 +9,10 @@ from django.shortcuts import redirect, render
 class LandingPage(View):
     def get(self, request):
         return render (request, "landing.html")
+
+class PostVehicle(View):
+    def get(self, request):
+        return render (request, "post-vehicle.html", {"post_form" : forms.PostVehicleForm()})
+
+    def post(self, request):
+
