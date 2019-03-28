@@ -8,7 +8,8 @@ from django.shortcuts import redirect, render
 # Create your views here.
 class LandingPage(View):
     def get(self, request):
-        return render(request, "landing.html")
+        return render(request, "landing.html",
+                      {"car_post": models.VehiclePost.objects.all()})
 
 
 class PostVehicle(View):
@@ -27,7 +28,7 @@ class PostVehicle(View):
             return render(request, "post-vehicle.html", {"post_form": form})
 
 
-class PostedVehicle(View):
-    def get(self, request):
-        return render(request, "posted-vehicles.html",
-                      {"car_post": models.VehiclePost.objects.all()})
+# class PostedVehicle(View):
+#     def get(self, request):
+#         return render(request, "landing.html",
+#                       {"car_post": models.VehiclePost.objects.all()})

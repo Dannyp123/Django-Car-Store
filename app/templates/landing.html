@@ -12,7 +12,8 @@
                     <a class="nav-link text-light" href=""><span class="text-light">Inventory</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="{% url 'post-vehicle' %} "><span class="text-light">Post a car</span></a>
+                    <a class="nav-link text-light" href="{% url 'post-vehicle' %} "><span class="text-light">Post a
+                            car</span></a>
                 </li>
             </ul>
         </div>
@@ -22,13 +23,14 @@
     <div class="card my-4" style="background-color:rgb(218, 218, 218)">
         <div class="card-body">
             <h2 class="text-center">Car title</h2>
-            <div class="p-3">
-                <img src="{{ car_post.car_img }}" alt="Image">
+
+            {% for cars in car_post %}
+            <div class="col-lg-8 col-md-5 col-sm-4 p-3">
+                <img class="col-lg-8 col-md-5 col-sm-4" src="{{ cars.car_img }}" alt="Image">
             </div>
-            <p>car details</p>
-            <p>car details</p>
-            <p>car details</p>
-            <p>car details</p>
+            <p>{{ cars.make }}</p>
+
+            {% endfor %}
         </div>
     </div>
 </div>
