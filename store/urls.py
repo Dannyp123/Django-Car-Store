@@ -18,5 +18,6 @@ from app import views
 
 urlpatterns = [
     path("", views.LandingPage.as_view(), name="landing"),
-    path("post-vehicle/", views.PostVehicle.as_view(), name="post-vehicle")
+    path("posting-vehicle", views.PostVehicle.as_view(), name="post-vehicle"),
+    path("posted-vehicles", views.PostedVehicle.as_view(), name="posted-vehicle")
 ]

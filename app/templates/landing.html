@@ -12,7 +12,7 @@
                     <a class="nav-link text-light" href=""><span class="text-light">Inventory</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href=""><span class="text-light">Post a car</span></a>
+                    <a class="nav-link text-light" href="{% url 'post-vehicle' %} "><span class="text-light">Post a car</span></a>
                 </li>
             </ul>
         </div>
@@ -23,7 +23,7 @@
         <div class="card-body">
             <h2 class="text-center">Car title</h2>
             <div class="p-3">
-                <img src="" alt="Image">
+                <img src="{{ car_post.car_img }}" alt="Image">
             </div>
             <p>car details</p>
             <p>car details</p>
