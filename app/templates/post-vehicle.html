@@ -5,6 +5,8 @@
             <form action="{% url 'post-vehicle' %}" method="POST" >
                     {% csrf_token %}
                 <p>Image URL:</p> {{post_form.car_img}}
+                <p>Car Make:</p> {{post_form.make}}
+
                 <button class="btn btn-success" type="submit">Submit Post</button>
             </form>
         </div>

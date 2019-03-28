@@ -1,9 +1,14 @@
 from django import forms
 
+
 class PostVehicleForm(forms.Form):
     car_img = forms.URLField(
         widget=forms.TextInput(attrs={
-            "class" : "form-control mb-3",
-            "placeholder" : "Image URL"
-        })
-    )
+            "class": "form-control mb-3",
+            "placeholder": "Image URL"
+        }))
+    make = forms.CharField(
+        widget=forms.TextInput(attrs={
+            "class": "form-control mb-3",
+            "placeholder": "Cars Make"
+        }))

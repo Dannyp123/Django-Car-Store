@@ -20,8 +20,9 @@ class PostVehicle(View):
         form = forms.PostVehicleForm(data=request.POST)
         if form.is_valid():
             car_img = form.cleaned_data["car_img"]
-            models.VehiclePost.submit_vehicle_post(car_img)
-            return redirect("post-vehicle")
+            make = form.cleaned_data["make"]
+            models.VehiclePost.submit_vehicle_post(car_img, make)
+            return redirect("landing")
         else:
             return render(request, "post-vehicle.html", {"post_form": form})
 
