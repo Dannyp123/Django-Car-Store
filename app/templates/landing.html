@@ -10,17 +10,25 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link text-light" href="{% url 'post-vehicle' %} "><span class="text-light">Post a
-                            car</span></a>
+                            ride</span></a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
 <div class="container">
-    <div class="card my-4" style="background-color:rgb(218, 218, 218)">
+    <div class="card my-4 pageColor">
         <div class="card-header">
+
             <h1 class="text-faded text-center">Avaliable Cars</h1>
-            <p>*click car image to see details</p>
+            <p class="text-center" >*click car image to see details</p>
+            <div class="d-flex float-right">
+
+
+                <form action="{% url 'post-vehicle' %} ">
+                    <button class="btn btn-success" type="submit">Post a ride</button>
+                </form>
+            </div>
         </div>
         <div class="card-body">
             <div class="carBox">
@@ -28,7 +36,7 @@
                     {% for car in car_post %}
                     <div class="imgContainer">
                         <p>
-                            <a href="">
+                            <a href="{% url 'car-page' car.id %}">
                                 <img class="container carImg" src="{{ car.car_img }}" alt="" />
                             </a>
                         </p>
