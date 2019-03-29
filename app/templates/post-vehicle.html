@@ -2,10 +2,15 @@
 <div class="container">
     <div class="card my-4">
         <div class="card-body">
-            <form action="{% url 'post-vehicle' %}" method="POST" >
-                    {% csrf_token %}
+            <form action="{% url 'post-vehicle' %}" method="POST">
+                {% csrf_token %}
                 <p>Image URL:</p> {{post_form.car_img}}
-                <p>Car Make:</p> {{post_form.make}}
+                <p>Cars Year:</p> {{post_form.year}}
+                <p>Cars Make:</p> {{post_form.make}}
+                <p>Cars Model:</p> {{post_form.model}}
+                <p>Cars Total Mileage:</p> {{post_form.mileage}}
+
+
 
                 <button class="btn btn-success" type="submit">Submit Post</button>
             </form>

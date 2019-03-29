@@ -1,48 +1,40 @@
 {% extends 'base.html' %} {% block body %}
 <nav class="navbar navbar-expand-lg bg-dark navbar-light sticky-top p-3">
-  <h1 class="text-light"><i class="fas fa-car"></i></h1>
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <div class="ml-3">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link text-light" href=""
-            ><span class="text-light">Inventory</span></a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="{% url 'post-vehicle' %} "
-            ><span class="text-light">Post a car</span></a
-          >
-        </li>
-      </ul>
+    <h1 class="text-light"><i class="fas fa-car"></i></h1>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="ml-3">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{% url 'post-vehicle' %} "><span class="text-light">Post a
+                            car</span></a>
+                </li>
+            </ul>
+        </div>
     </div>
-  </div>
 </nav>
 <div class="container">
-  <div class="card my-4" style="background-color:rgb(218, 218, 218)">
-    <div class="card-body">
-      <div class="carBox">
-        <div class="carContainer">
-          {% for cars in car_post %}
-          <div class="imgContainer">
-            <p>
-              <img class="container carImg" src="{{ cars.car_img }}" alt="" />
-            </p>
-          </div>
-          {% endfor %} {% endblock body%}
+    <div class="card my-4" style="background-color:rgb(218, 218, 218)">
+        <div class="card-header">
+            <h1 class="text-faded text-center">Avaliable Cars</h1>
         </div>
-      </div>
+        <div class="card-body">
+            <div class="carBox">
+                <div class="carContainer">
+                    {% for car in car_post %}
+                    <div class="imgContainer">
+                        <p>
+                            <a href="">
+                                <img class="container carImg" src="{{ car.car_img }}" alt="" />
+                            </a>
+                        </p>
+                    </div>
+                    {% endfor %} {% endblock body%}
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
