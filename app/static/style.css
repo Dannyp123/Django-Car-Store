@@ -1,3 +1,23 @@
-.cutom-bg-color {
-    background-color: rgb(223, 37, 37)
+.carImg {
+    width: 350px;
+    height: 250px;
+}
+
+@media only screen and (min-width: 1200px) {
+  .carBox {
+    display: flex;
+    justify-content: center;
+  }
+
+  .carContainer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+    .carImg {
+        width: 125px;
+        height: 150px;
+    }
 }
