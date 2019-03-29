@@ -1,6 +1,15 @@
 .carImg {
-    width: 350px;
-    height: 250px;
+  width: 350px;
+  height: 250px;
+}
+.carIndvImg {
+  width: 175px;
+  height: 175px;
+  margin-right: 12px;
+}
+
+.pageColor {
+  background-color: rgb(218, 218, 218)
 }
 
 @media only screen and (min-width: 1200px) {
@@ -13,11 +22,14 @@
     display: grid;
     grid-template-columns: auto auto auto;
   }
+  .carHeader {
+    display: flex;
+  }
 }
 
 @media only screen and (max-width: 600px) {
-    .carImg {
-        width: 125px;
-        height: 150px;
-    }
+  .carImg {
+    width: 125px;
+    height: 150px;
+  }
 }
