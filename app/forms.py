@@ -1,6 +1,38 @@
 from django import forms
 
-CHOICES = (('Ford', 'Ford'), ('Chevy', 'Chevy'))
+CHOICES = (
+    ('Acura', 'Acura'),
+    ('Audi', 'Audi'),
+    ('Bentley', 'Bentley'),
+    ('BMW', 'BMW'),
+    ('Bugatti', 'Bugatti'),
+    ('Buick', 'Buick'),
+    ('Cadillac', 'Cadillac'),
+    ('Chevy', 'Chevy'),
+    ('Chrystler', 'Chrystler'),
+    ('Dodge', 'Dodge'),
+    ('Ferrari', 'Ferrari'),
+    ('Fiat', 'Fiat'),
+    ('Ford', 'Ford'),
+    ('GMC', 'GMC'),
+    ('Honda', 'Honda'),
+    ('Hyundai', 'Hyundai'),
+    ('Infiniti', 'Infiniti'),
+    ('Jaguar', 'Jaguar'),
+    ('Jeep', 'Jeep'),
+    ('Lamboghini', 'Lamboghini'),
+    ('Land Rover', 'Land Rover'),
+    ('Lexus', 'Lexus'),
+    ('Maserati', 'Maserati'),
+    ('Mazda', 'Mazda'),
+    ('Mercedes-Benz', 'Mercedes-Benz'),
+    ('Nissan', 'Nissan'),
+    ('Porsche', 'Porsche'),
+    ('Rolls Royce', 'Rolls Royce'),
+    ('Toyota', 'Toyota'),
+    ('Volkswagen', 'Volkswagen'),
+    ('Volvo', 'Volvo')
+)
 
 
 class PostVehicleForm(forms.Form):
