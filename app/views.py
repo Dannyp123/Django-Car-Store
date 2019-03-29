@@ -25,15 +25,19 @@ class PostVehicle(View):
             make = form.cleaned_data["make"]
             model = form.cleaned_data["model"]
             mileage = form.cleaned_data["mileage"]
+            price = form.cleaned_data["price"]
+            description = form.cleaned_data["description"]
+
+
 
             models.VehiclePost.submit_vehicle_post(car_img, year, make, model,
-                                                   mileage)
+                                                   mileage, price, description)
             return redirect("landing")
         else:
             return render(request, "post-vehicle.html", {"post_form": form})
 
 
-# class PostedVehicle(View):
-#     def get(self, request):
-#         return render(request, "landing.html",
-#                       {"car_post": models.VehiclePost.objects.all()})
+class VehicleSale(View):
+    def get(self, request, id):
+        return render(request, "car-page.html",
+                      {"car_post": models.VehiclePost.objects.get(id=id)})

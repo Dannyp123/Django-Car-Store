@@ -55,8 +55,18 @@ class PostVehicleForm(forms.Form):
             "class": "form-control mb-3",
             "placeholder": "Cars Model"
         }))
+    price = forms.IntegerField(
+        widget=forms.TextInput(attrs={
+            "class": "form-control mb-3",
+            "placeholder": "$ Price"
+        }))
     mileage = forms.IntegerField(
         widget=forms.TextInput(attrs={
             "class": "form-control mb-3",
             "placeholder": "Cars Mileage"
+        }))
+    description = forms.CharField(
+        widget=forms.Textarea(attrs={
+            "class": "form-control mb-3",
+            "placeholder": "Short description"
         }))

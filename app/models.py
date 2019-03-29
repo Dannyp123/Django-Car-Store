@@ -8,6 +8,9 @@ class VehiclePost(models.Model):
     make = models.TextField()
     model = models.TextField()
     mileage = models.IntegerField()
+    price = models.IntegerField()
+    description = models.TextField(max_length=100)
+
 
     # def __str__(self):
     #     return '''
@@ -16,10 +19,12 @@ class VehiclePost(models.Model):
     #     '''.format(self.car_img, self.make)
 
     @staticmethod
-    def submit_vehicle_post(car_img, year, make, model, mileage):
+    def submit_vehicle_post(car_img, year, make, model, mileage, price, description):
         VehiclePost(
             car_img=car_img,
             year=year,
             make=make,
             model=model,
-            mileage=mileage).save()
+            mileage=mileage,
+            price = price,
+            description = description).save()
