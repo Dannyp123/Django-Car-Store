@@ -70,3 +70,11 @@ class PostVehicleForm(forms.Form):
             "class": "form-control mb-3",
             "placeholder": "Short description"
         }))
+
+class BuyingCarForm(forms.Form):
+    name = forms.CharField(
+        widget=forms.TextInput(attrs={
+            "class" : "form-control mb-3",
+            "placeholder" : "Name"
+        })
+    )

@@ -28,8 +28,6 @@ class PostVehicle(View):
             price = form.cleaned_data["price"]
             description = form.cleaned_data["description"]
 
-
-
             models.VehiclePost.submit_vehicle_post(car_img, year, make, model,
                                                    mileage, price, description)
             return redirect("landing")
@@ -41,3 +39,25 @@ class VehicleSale(View):
     def get(self, request, id):
         return render(request, "car-page.html",
                       {"car_post": models.VehiclePost.objects.get(id=id)})
+
+
+class BuyingVehicle(View):
+    def get(self, request):
+        return render(request, "buy-vehicle.html",
+                      {"buy_vehicle": forms.BuyingCarForm()})
+
+    def post(self, request):
+        form = forms.BuyingCarForm(data=request.POST)
+        if form.is_valid():
+            name = form.cleaned_data["name"]
+
+            models.BuyVehicle.submit_vehicle_purchase(name)
+            return redirect("landing")
+        else:
+            return render(request, "buy-vehicle.html", {"buy-vehicle": form})
+
+
+# class BuyCorrectVehicle(View):
+#     def get(self, request, id):
+#         return render(request, "buy-vehicle.html",
+#                       {"buy_car": models.BuyVehicle.objects.get(id=id)})
