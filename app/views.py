@@ -50,8 +50,14 @@ class BuyingVehicle(View):
         form = forms.BuyingCarForm(data=request.POST)
         if form.is_valid():
             name = form.cleaned_data["name"]
+            street = form.cleaned_data["street"]
+            city = form.cleaned_data["city"]
+            state = form.cleaned_data["state"]
+            z_code = form.cleaned_data["z_code"]
+            p_number = form.cleaned_data["p_number"]
 
-            models.BuyVehicle.submit_vehicle_purchase(name)
+            models.BuyVehicle.submit_vehicle_purchase(name, street, city,
+                                                      state, z_code, p_number)
             return redirect("landing")
         else:
             return render(request, "buy-vehicle.html", {"buy-vehicle": form})

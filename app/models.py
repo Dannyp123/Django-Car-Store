@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import RegexValidator
 
 
 # Create your models here.
@@ -32,7 +33,21 @@ class VehiclePost(models.Model):
 
 class BuyVehicle(models.Model):
     name = models.TextField()
+    street = models.TextField()
+    city = models.TextField()
+    state = models.TextField()
+    z_code = models.IntegerField()
+    phone_regex = RegexValidator(
+        regex=r'^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$')
+    p_number = models.CharField(validators=[phone_regex], max_length=10)
 
     @staticmethod
-    def submit_vehicle_purchase(name):
-        BuyVehicle(name=name)
+    def submit_vehicle_purchase(name, street, city, state, z_code, p_number):
+        BuyVehicle(
+            name=name,
+            street=street,
+            city=city,
+            state=state,
+            z_code=z_code,
+            p_number=p_number,
+        ).save()

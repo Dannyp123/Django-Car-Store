@@ -22,8 +22,32 @@
 <div class="container">
     <div class="card my-4 ">
         <div class="card-body">
-            <p>Buyer's Name:</p> {{ buy_vehicle.name }}
+            <form action="{% url 'buy-vehicle' %}" method="post">
+                {% csrf_token %}
+                <div>
+                    <h3 class="text-left">Contact Information</h3>
+                    <p>Buyer's Name:</p> {{ buy_vehicle.name }}
+                    <p>Phone Number:</p> {{ buy_vehicle.p_number }}
+                </div>
+                <hr>
+                <div>
+                    <h3 class="text-left">Address</h3>
+                    <p>Street Name:</p> {{ buy_vehicle.street }}
+                    <p>City:</p> {{ buy_vehicle.city }}
+                    <p>State:</p> {{ buy_vehicle.state }}
+                    <p>Zip Code:</p> {{ buy_vehicle.z_code }}
+                </div>
+                <div class="d-flex">
+                    <button type="submit" class="btn btn-success mr-3">Submit</button>
+
+            </form>
+            <form action="{% url 'landing' %}">
+                <button type="submit" class="btn btn-secondary">Home</button>
+            </form>
         </div>
+
+
     </div>
+</div>
 </div>
 {% endblock body %}

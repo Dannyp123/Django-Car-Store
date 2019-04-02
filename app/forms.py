@@ -34,6 +34,57 @@ CHOICES = (
     ('Volvo', 'Volvo')
 )
 
+STATES = (
+    ('AL', 'AL'),
+    ('AK', 'AK'),
+    ('AZ', 'AZ'),
+    ('AR', 'AR'),
+    ('CA', 'CA'),
+    ('CO', 'CO'),
+    ('CT', 'CT'),
+    ('DE', 'DE'),
+    ('FL', 'FL'),
+    ('GA', 'GA'),
+    ('HI', 'HI'),
+    ('ID', 'ID'),
+    ('IL', 'IL'),
+    ('IN', 'IN'),
+    ('IA', 'IA'),
+    ('KS', 'KS'),
+    ('KY', 'KY'),
+    ('LA', 'LA'),
+    ('ME', 'ME'),
+    ('MD', 'MD'),
+    ('MA', 'MA'),
+    ('MI', 'MI'),
+    ('MN', 'MN'),
+    ('MS', 'MS'),
+    ('MT', 'MT'),
+    ('NE', 'NE'),
+    ('NH', 'NH'),
+    ('NJ', 'NJ'),
+    ('NM', 'NM'),
+    ('NY', 'NY'),
+    ('NC', 'NC'),
+    ('ND', 'ND'),
+    ('OH', 'OH'),
+    ('OK', 'OK'),
+    ('OR' ,'OR'),
+    ('PA', 'PA'),
+    ('RI', 'RI'),
+    ('SC', 'SC'),
+    ('SD', 'SD'),
+    ('TN', 'TN'),
+    ('TX', 'TX'),
+    ('UT', 'UT'),
+    ('VT', 'VT'),
+    ('VA', 'VA'),
+    ('WA', 'WA'),
+    ('WV', 'WV'),
+    ('WI', 'WI'),
+    ('WY', 'WY')
+)
+
 
 class PostVehicleForm(forms.Form):
     car_img = forms.URLField(
@@ -77,4 +128,33 @@ class BuyingCarForm(forms.Form):
             "class" : "form-control mb-3",
             "placeholder" : "Name"
         })
+    )
+    street = forms.CharField(
+        widget=forms.TextInput(attrs={
+            "class" : "form-control mb-3",
+            "placeholder" : "123 Askew Drive"
+        })
+    )
+    city = forms.CharField(
+        widget=forms.TextInput(attrs={
+            "class" : "form-control mb-3",
+            "placeholder" : "City"
+        })
+    )
+    state = forms.CharField(
+        widget=forms.Select(
+            choices=STATES, attrs={"class": "form-control mb-3"}))
+
+    z_code = forms.CharField(
+        widget=forms.TextInput(attrs={
+            "class" : "form-control mb-3",
+            "placeholder" : "Zip Code"
+        })
+    )
+    p_number = forms.RegexField(
+         regex=r'^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$',
+          widget=forms.TextInput(attrs={
+            "class" : "form-control mb-3",
+            "placeholder" : "(333) 232-3433"
+        })   
     )
