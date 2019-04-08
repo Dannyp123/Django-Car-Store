@@ -58,12 +58,14 @@ class BuyingVehicle(View):
 
             models.BuyVehicle.submit_vehicle_purchase(name, street, city,
                                                       state, z_code, p_number)
-            return redirect("landing")
+            return redirect("receipt")
         else:
             return render(request, "buy-vehicle.html", {"buy-vehicle": form})
 
 
-# class BuyCorrectVehicle(View):
-#     def get(self, request, id):
-#         return render(request, "buy-vehicle.html",
-#                       {"buy_car": models.BuyVehicle.objects.get(id=id)})
+class VehicleReceipt(View):
+    def get(self, request):
+        return render(
+            request, "receipt.html",
+            {"car_receipt": models.VehiclePost.objects.all()},
+            {"car_purchase_receipt": models.BuyVehicle.objects.all()})

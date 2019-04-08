@@ -20,5 +20,6 @@ urlpatterns = [
     path("", views.LandingPage.as_view(), name="landing"),
     path("posting-vehicle", views.PostVehicle.as_view(), name="post-vehicle"),
     path("car-page/<id>/", views.VehicleSale.as_view(), name="car-page"),
-    path("buying-vehicle", views.BuyingVehicle.as_view(), name="buy-vehicle")
+    path("buying-vehicle", views.BuyingVehicle.as_view(), name="buy-vehicle"),
+    path("receipt", views.VehicleReceipt.as_view(), name="receipt")
 ]

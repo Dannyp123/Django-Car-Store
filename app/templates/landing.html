@@ -1,46 +1,37 @@
 {% extends 'base.html' %} {% block body %}
-<nav class="navbar navbar-expand-lg bg-dark navbar-light sticky-top p-3">
-    <h3 class="text-light"><i class="fas fa-car"></i> Rent-a-Ride</h3>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="ml-3">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="{% url 'post-vehicle' %} "><span class="text-light">Post a
-                            ride</span></a>
-                </li>
-            </ul>
-        </div>
+<nav class="z-depth-2">
+    <div class="nav-wrapper grey darken-3">
+        <span class="brand-logo" style="margin-left: 12px">Rent-a-Ride</span>
+        <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="{% url 'post-vehicle' %} ">Post a ride</a></li>
+        </ul>
     </div>
 </nav>
+
+<ul class="sidenav" id="mobile-nav">
+    <li><a href="{% url 'post-vehicle' %} ">Post a ride</a></li>
+</ul>
 <div class="container">
-    <div class="card my-4 pageColor">
-        <div class="card-header">
-
-            <h1 class="text-faded text-center">Avaliable Cars</h1>
+    <div class="card">
+        <div class="card-title">
+            <h1 class="black-text lighten-1 text-center">Avaliable Cars</h1>
             <p class="text-center">*click car image to see details</p>
-            <div class="d-flex float-right">
-
-
+            <div class="text-center">
                 <form action="{% url 'post-vehicle' %} ">
-                    <button class="btn btn-success" type="submit">Post a ride</button>
+                    <button class="btn waves-effect waves-light blue darken-3" type="submit">Post a ride</button>
                 </form>
             </div>
         </div>
-        <div class="card-body">
-            <div class="carBox">
-                <div class="carContainer">
+        <div class="card-content">
+
+            <div class="carContainer">
+                <div class="center-align">
                     {% for car in car_post %}
-                    <div class="imgContainer">
-                        <p>
-                            <a href="{% url 'car-page' car.id %}">
-                                <img class="container carImg" src="{{ car.car_img }}" alt="" />
-                            </a>
-                        </p>
-                    </div>
+
+                    <a href="{% url 'car-page' car.id %}">
+                        <img class="carImg" src="{{ car.car_img }}" alt="" />
+                    </a>
 
                     {% endfor %} {% endblock body%}
                 </div>
