@@ -89,56 +89,47 @@ STATES = (
 class PostVehicleForm(forms.Form):
     car_img = forms.URLField(
         widget=forms.TextInput(attrs={
-            "class": "form-control mb-3",
-            "placeholder": "Image URL"
+            "class": "input-feild black-text"
         }))
     year = forms.IntegerField(
         widget=forms.TextInput(attrs={
-            "class": "form-control mb-3",
-            "placeholder": "Cars Year"
+            "class": "input-feild",
         }))
     make = forms.CharField(
         widget=forms.Select(
-            choices=CHOICES, attrs={"class": "form-control mb-3"}))
+            choices=CHOICES, attrs={"class": "input-feild"}))
 
     model = forms.CharField(
         widget=forms.TextInput(attrs={
-            "class": "form-control mb-3",
-            "placeholder": "Cars Model"
+            "class": "input-feild"
         }))
     price = forms.IntegerField(
         widget=forms.TextInput(attrs={
-            "class": "form-control mb-3",
-            "placeholder": "$ Price"
+            "class": "input-feild"
         }))
     mileage = forms.IntegerField(
         widget=forms.TextInput(attrs={
-            "class": "form-control mb-3",
-            "placeholder": "Cars Mileage"
+            "class": "input-feild"
         }))
     description = forms.CharField(
         widget=forms.Textarea(attrs={
-            "class": "form-control mb-3",
-            "placeholder": "Short description"
+            "class": "materialize-textarea"
         }))
 
 class BuyingCarForm(forms.Form):
     name = forms.CharField(
         widget=forms.TextInput(attrs={
-            "class" : "form-control mb-3",
-            "placeholder" : "Name"
+            "class" : "input-feild"
         })
     )
     street = forms.CharField(
         widget=forms.TextInput(attrs={
-            "class" : "form-control mb-3",
-            "placeholder" : "123 Askew Drive"
+            "class" : "input-feild",
         })
     )
     city = forms.CharField(
         widget=forms.TextInput(attrs={
-            "class" : "form-control mb-3",
-            "placeholder" : "City"
+            "class" : "input-feild"
         })
     )
     state = forms.CharField(
@@ -147,14 +138,12 @@ class BuyingCarForm(forms.Form):
 
     z_code = forms.CharField(
         widget=forms.TextInput(attrs={
-            "class" : "form-control mb-3",
-            "placeholder" : "Zip Code"
+            "class" : "input-feild"
         })
     )
     p_number = forms.RegexField(
          regex=r'^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$',
           widget=forms.TextInput(attrs={
-            "class" : "form-control mb-3",
-            "placeholder" : "(333) 232-3433"
+            "class" : "input-feild"
         })   
     )

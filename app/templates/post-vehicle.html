@@ -1,23 +1,20 @@
 {% extends 'base.html' %} {% block body %}
-<nav class="navbar navbar-expand-lg bg-dark navbar-light sticky-top p-3">
-    <h3 class="text-light"><i class="fas fa-car"></i> Rent-a-Ride</h3>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="ml-3">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="{% url 'landing' %} "><span class="text-light">Back</span></a>
-                </li>
-            </ul>
-        </div>
+<nav class="z-depth-2">
+    <div class="nav-wrapper grey darken-3">
+        <span class="brand-logo" style="margin-left: 12px">Rent-a-Ride</span>
+        <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="{% url 'landing' %} ">Back</a></li>
+        </ul>
     </div>
 </nav>
+
+<ul class="sidenav" id="mobile-nav">
+    <li><a href="{% url 'landing' %} ">Back</a></li>
+</ul>
 <div class="container">
-    <div class="card my-4">
-        <div class="card-body">
+    <div class="card">
+        <div class="card-content">
             <form action="{% url 'post-vehicle' %}" method="POST">
                 {% csrf_token %}
                 <p>Image URL:</p> {{post_form.car_img}}
@@ -31,11 +28,11 @@
 
 
                 <div class="d-flex">
-                    <button class="btn btn-success" type="submit">Submit Post</button>
+                    <button class="btn waves-effect waves-light green darken-3 mr-1" type="submit">Submit Post</button>
 
             </form>
             <form action="{% url 'landing' %}">
-                <button class="btn btn-secondary ml-3" type="submit">Back</button>
+                <button class="btn waves-effect waves-light grey darken-1 ml-1" type="submit">Back</button>
             </form>
         </div>
     </div>

@@ -10,6 +10,14 @@
   display: flex;
 }
 
+.ml-1 {
+  margin-left: 12px;
+}
+
+.mr-1 {
+  margin-right: 12px;
+}
+
 .float-right {
   float: right;
   margin-right: 14px;
