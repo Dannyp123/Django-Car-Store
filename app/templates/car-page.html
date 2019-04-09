@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block body %}
-<nav class="navbar navbar-expand-lg bg-dark navbar-light sticky-top p-3">
+<!-- <nav class="navbar navbar-expand-lg bg-dark navbar-light sticky-top p-3">
     <h3 class="text-light"><i class="fas fa-car"></i> Rent-a-Ride</h3>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,7 +18,23 @@
             </ul>
         </div>
     </div>
+</nav> -->
+<nav class="z-depth-2">
+    <div class="nav-wrapper grey darken-3">
+        <span class="brand-logo" style="margin-left: 12px">Buy-a-Ride</span>
+        <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="{% url 'post-vehicle' %}">Post a ride</a></li>
+            <li><a href="{% url 'landing' %}">Back</a></li>
+        </ul>
+    </div>
 </nav>
+
+<ul class="sidenav" id="mobile-nav">
+    <li><a href="{% url 'post-vehicle' %}">Post a ride</a></li>
+    <li><a href="{% url 'landing' %}">Back</a></li>
+</ul>
+
 <div class="container">
     <div class="card my-4">
         <div class="card-body">
