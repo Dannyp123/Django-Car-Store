@@ -1,48 +1,46 @@
 {% extends 'base.html' %} {% block body %}
-<nav class="navbar navbar-expand-lg bg-dark navbar-light sticky-top p-3">
-    <h3 class="text-light"><i class="fas fa-car"></i> Rent-a-Ride</h3>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="ml-3">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="{% url 'post-vehicle' %} "><span class="text-light">Post a
-                            ride</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="{% url 'landing' %} "><span class="text-light">Back</span></a>
-                </li>
+<div class="navbar-fixed">
+    <nav class="z-depth-2">
+        <div class="nav-wrapper grey darken-3">
+            <span class="brand-logo" style="margin-left: 12px">Buy-a-Ride</span>
+            <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="{% url 'post-vehicle' %}">Post a ride</a></li>
+                <li><a href="{% url 'landing' %}">Back</a></li>
             </ul>
         </div>
-    </div>
-</nav>
+    </nav>
+</div>
+
+<ul class="sidenav" id="mobile-nav">
+    <li><a href="{% url 'post-vehicle' %}">Post a ride</a></li>
+    <li><a href="{% url 'landing' %}">Back</a></li>
+</ul>
 <div class="container">
-    <div class="card my-4 ">
-        <div class="card-body">
+    <div class="card">
+        <div class="card-content">
             <form action="{% url 'buy-vehicle' %}" method="post">
                 {% csrf_token %}
                 <div>
-                    <h3 class="text-left">Contact Information</h3>
+                    <h3 class="left-align">Contact Information</h3>
                     <p>Buyer's Name:</p> {{ buy_vehicle.name }}
                     <p>Phone Number:</p> {{ buy_vehicle.p_number }}
                 </div>
-                <hr>
                 <div>
-                    <h3 class="text-left">Address</h3>
+                    <h3 class="left-align">Address</h3>
                     <p>Street Name:</p> {{ buy_vehicle.street }}
                     <p>City:</p> {{ buy_vehicle.city }}
                     <p>State:</p> {{ buy_vehicle.state }}
                     <p>Zip Code:</p> {{ buy_vehicle.z_code }}
                 </div>
                 <div class="d-flex">
-                    <button type="submit" class="btn btn-success mr-3">Submit</button>
+                    <button type="submit" class="btn waves-effect waves-light green darken-3 mr-1"><i
+                            class="fas fa-money-bill-alt"></i> Submit</button>
 
             </form>
             <form action="{% url 'landing' %}">
-                <button type="submit" class="btn btn-secondary">Home</button>
+                <button type="submit" class="btn waves-effect waves-light grey darken-3 "><i class="fas fa-home"></i>
+                    Home</button>
             </form>
         </div>
 

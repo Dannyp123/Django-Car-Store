@@ -12,10 +12,10 @@
     </nav>
 </div>
 
-    <ul class="sidenav" id="mobile-nav">
-        <li><a href="{% url 'post-vehicle' %}">Post a ride</a></li>
-        <li><a href="{% url 'landing' %}">Back</a></li>
-    </ul>
+<ul class="sidenav" id="mobile-nav">
+    <li><a href="{% url 'post-vehicle' %}">Post a ride</a></li>
+    <li><a href="{% url 'landing' %}">Back</a></li>
+</ul>
 
 
 <div class="container">
@@ -46,10 +46,12 @@
             <div class="mt-2">
                 <div class="d-flex">
                     <form action="{% url 'buy-vehicle' %}">
-                        <button class="btn waves-effect waves-light green darken-3" type="submit">Buy</button>
+                        <button class="btn waves-effect waves-light green darken-3" type="submit"><i
+                                class="fas fa-money-bill-alt"></i> Buy</button>
                     </form>
                     <form action="{% url 'landing' %}">
-                        <button type="submit" class="btn waves-effect waves-light grey darken-3 ml-1">Back</button>
+                        <button type="submit" class="btn waves-effect waves-light grey darken-3 ml-1"><i
+                                class="far fa-hand-point-left"></i> Back</button>
                     </form>
                 </div>
             </div>
