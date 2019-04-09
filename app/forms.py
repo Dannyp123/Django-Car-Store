@@ -89,61 +89,61 @@ STATES = (
 class PostVehicleForm(forms.Form):
     car_img = forms.URLField(
         widget=forms.TextInput(attrs={
-            "class": "input-feild black-text"
+            "class": "input-feild black-text mb-1"
         }))
     year = forms.IntegerField(
         widget=forms.TextInput(attrs={
-            "class": "input-feild",
+            "class": "input-feild black-text mb-1",
         }))
     make = forms.CharField(
         widget=forms.Select(
-            choices=CHOICES, attrs={"class": "input-feild"}))
+            choices=CHOICES, attrs={"class": "input-feild black-text mb-1"}))
 
     model = forms.CharField(
         widget=forms.TextInput(attrs={
-            "class": "input-feild"
+            "class": "input-feild black-text mb-1"
         }))
     price = forms.IntegerField(
         widget=forms.TextInput(attrs={
-            "class": "input-feild"
+            "class": "input-feild black-text mb-1"
         }))
     mileage = forms.IntegerField(
         widget=forms.TextInput(attrs={
-            "class": "input-feild"
+            "class": "input-feild black-text mb-1"
         }))
     description = forms.CharField(
         widget=forms.Textarea(attrs={
-            "class": "materialize-textarea"
+            "class": "materialize-textarea black-text mb-1"
         }))
 
 class BuyingCarForm(forms.Form):
     name = forms.CharField(
         widget=forms.TextInput(attrs={
-            "class" : "input-feild"
+            "class" : "input-feild  black-text mb-1"
         })
     )
     street = forms.CharField(
         widget=forms.TextInput(attrs={
-            "class" : "input-feild",
+            "class" : "input-feild black-text mb-1",
         })
     )
     city = forms.CharField(
         widget=forms.TextInput(attrs={
-            "class" : "input-feild"
+            "class" : "input-feild black-text mb-1"
         })
     )
     state = forms.CharField(
         widget=forms.Select(
-            choices=STATES, attrs={"class": "form-control mb-3"}))
+            choices=STATES, attrs={"class": "input-feild black-text mb-1"}))
 
     z_code = forms.CharField(
         widget=forms.TextInput(attrs={
-            "class" : "input-feild"
+            "class" : "input-feild black-text mb-1"
         })
     )
     p_number = forms.RegexField(
          regex=r'^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$',
           widget=forms.TextInput(attrs={
-            "class" : "input-feild"
+            "class" : "input-feild black-text mb-1"
         })   
     )

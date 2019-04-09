@@ -31,7 +31,7 @@
                     {% for car in car_post %}
 
                     <a href="{% url 'car-page' car.id %}">
-                        <img class="carImg" src="{{ car.car_img }}" alt="" />
+                        <img class="carImg car-detail" src="{{ car.car_img }}" alt="No Image" />
                     </a>
 
                     {% endfor %} {% endblock body%}
