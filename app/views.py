@@ -65,7 +65,11 @@ class BuyingVehicle(View):
 
 class VehicleReceipt(View):
     def get(self, request):
-        return render(
-            request, "receipt.html",
-            {"car_receipt": models.VehiclePost.objects.all()},
-            {"car_purchase_receipt": models.BuyVehicle.objects.all()})
+        return render(request, "receipt.html",
+                      {"car_receipt": models.BuyVehicle.objects.all()})
+
+
+class ViewingReceipt(View):
+    def get(self, request, id):
+        return render(request, "receipt-page.html",
+                      {"read_receipt": models.BuyVehicle.objects.get(id=id)})

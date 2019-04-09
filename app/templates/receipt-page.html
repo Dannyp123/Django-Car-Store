@@ -6,7 +6,7 @@
             <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="{% url 'post-vehicle' %}">Post a ride</a></li>
-                <li><a href="{% url 'landing' %}">Back</a></li>
+                <li><a href="{% url 'receipt' %}">Back</a></li>
             </ul>
         </div>
     </nav>
@@ -14,17 +14,11 @@
 
 <ul class="sidenav" id="mobile-nav">
     <li><a href="{% url 'post-vehicle' %}">Post a ride</a></li>
-    <li><a href="{% url 'landing' %}">Back</a></li>
+    <li><a href="{% url 'receipt' %}">Back</a></li>
 </ul>
+
 <div class="container">
-    <div class="card">
-        <div class="card-content">
-            {% for car in car_receipt %}
-            <p>
-                <a href="{% url 'view-receipt' car.id %}">{{car.name}}</a>
-            </p>
-            {% endfor %}
-        </div>
-    </div>
+    <h1>{{ read_receipt.name }}</h1>
 </div>
-{% endblock body%}
+
+{% endblock body %}
